@@ -3,16 +3,30 @@
 
 # Sets the minimum version of CMake required to build the native library.
 
-cmake_minimum_required(VERSION 3.10.2)
+cmake_minimum_required(VERSION 3.4.1)
 
 # Declares and names the project.
 
 project("ndk")
 
+set(
+        myname
+
+        wanghuan
+)
+
+message(${myname})
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
+
+add_library(
+        userinfo-lib
+        SHARED
+        user/UserInfo.cpp
+)
 
 add_library( # Sets the name of the library.
              native-lib
@@ -42,7 +56,7 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
                        native-lib
-
+                       userinfo-lib
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
