@@ -3,6 +3,7 @@ package com.uwjx.ndk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,13 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = findViewById(R.id.sample_text);
         tv.setText(stringOfName());
+
+        findViewById(R.id.prinStr).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                printStr("wanghuan ni hao");
+            }
+        });
     }
 
     /**
@@ -29,4 +37,6 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromJNI();
 
     public native String stringOfName();
+
+    public native void printStr(String msg);
 }
