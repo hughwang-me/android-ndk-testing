@@ -7,4 +7,6 @@ public class DynamicUtil {
     }
 
     public native String dynamicString();
+
+    public native int plus(int x , int y);
 }

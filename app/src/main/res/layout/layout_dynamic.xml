@@ -8,9 +8,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dynamic_text"/>
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/plus_x"/>
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/plus_y"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="动态注册"
-        android:id="@+id/dynamic_btn"/>
+        android:text="动态注册字符串"
+        android:id="@+id/dynamic_btn_msg"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加法计算"
+        android:id="@+id/dynamic_btn_plus"/>
 </LinearLayout>

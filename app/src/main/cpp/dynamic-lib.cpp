@@ -7,6 +7,9 @@ jstring getMsg(JNIEnv *env , jobject jobj){
     return env->NewStringUTF("get msg success!");
 }
 
+jint getPlusResult(JNIEnv *env , jobject jobj , int x, int y){
+    return x + y;
+}
 
 int registerNativeMethods(JNIEnv *env ,
                           const char* name ,
@@ -26,6 +29,9 @@ int registerNativeMethods(JNIEnv *env ,
 static JNINativeMethod jniNativeMethod[] = {
         {
             "dynamicString" , "()Ljava/lang/String;" , (void *)getMsg
+        },
+        {
+            "plus" , "(II)I" , (void *)getPlusResult
         }
 };
 
@@ -35,6 +41,6 @@ int JNICALL JNI_OnLoad(JavaVM *vm , void  *reserved){
         if(vm->GetEnv(reinterpret_cast<void **>(&env), JNI_VERSION_1_6)){
             return JNI_FALSE;
         }
-        registerNativeMethods(env , JAVA_CLASS , jniNativeMethod , 1);
+        registerNativeMethods(env , JAVA_CLASS , jniNativeMethod , 2);
     return JNI_VERSION_1_6;
 }
