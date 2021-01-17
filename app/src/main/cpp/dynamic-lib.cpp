@@ -1,6 +1,7 @@
 
 #include <jni.h>
 
+
 #define JAVA_CLASS "com/uwjx/ndk/DynamicUtil"
 
 jstring getMsg(JNIEnv *env , jobject jobj){
